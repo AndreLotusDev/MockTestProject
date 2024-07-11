@@ -6,8 +6,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { TextoIaComponent } from './texto-ia/texto-ia.component';
 import { CommonModule } from '@angular/common';
 import { DiarioDaUniaoComponent } from './diario-da-uniao/diario-da-uniao.component';
-import { DadosRedesSociaisComponent } from "./dados-redes-sociais/dados-redes-sociais.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
+import { DadosRedesSociaisComponent } from './dados-redes-sociais/dados-redes-sociais.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { WebComponent } from './web/web.component';
 
 @Component({
   selector: 'app-root',
@@ -21,10 +22,11 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
     CommonModule,
     DiarioDaUniaoComponent,
     DadosRedesSociaisComponent,
-    DashboardComponent
+    DashboardComponent,
+    WebComponent,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'monitora-amazonas';

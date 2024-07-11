@@ -1,0 +1,52 @@
+<h2 mat-dialog-title>Informações</h2>
+<mat-dialog-content>
+  <img
+    [src]="data.img"
+    style="width: 64px; height: 64px; object-fit: cover; border-radius: 100%"
+  />
+  <h1>Análise de Perfil: {{ data.info.role }}</h1>
+  <div class="content">
+    <p><strong>Nome:</strong> {{ data.info.name }}</p>
+    <p><strong>Data da Análise:</strong> {{ dataHoje | date }}</p>
+  </div>
+  <div class="content">
+    <h2>Resumo da Análise</h2>
+    <p>
+      {{ data.info.resume }}
+    </p>
+  </div>
+  <div class="content">
+    <h2>1. Histórico Financeiro</h2>
+    <p [innerHTML]="data.info.serasa"></p>
+  </div>
+  <div class="content">
+    <h2>2. Redes Sociais</h2>
+    <p><strong>Conteúdo:</strong> {{ data.info.socialMedia }}</p>
+    <p><strong>Comportamento:</strong> {{ data.info.socialMediaBehavior }}</p>
+  </div>
+  <div class="content">
+    <h2>3. Histórico Criminal</h2>
+    <p>
+      <strong>Boletim de Ocorrência:</strong> {{ data.info.criminalRecord }}
+    </p>
+  </div>
+  <div class="content">
+    <h2>Conclusão</h2>
+    <p>
+      {{ data.info.conclusion }}
+    </p>
+  </div>
+  <div class="content">
+    <p>
+      <em>Nota:</em> Esta análise foi realizada utilizando técnicas avançadas de
+      inteligência artificial e dados disponíveis publicamente. Não substitui
+      uma investigação formal ou uma verificação de antecedentes completa.
+    </p>
+  </div>
+  <div class="footer">
+    <p><strong>Powered by Open IA</strong></p>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button pButton matDialogClose="true">Fechar</button>
+</mat-dialog-actions>

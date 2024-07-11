@@ -1,14 +1,55 @@
 <div class="dashboard">
-
   <div class="chart-container">
     <h3>Grafo de Ligação</h3>
-    <apx-chart [series]="graphSeries" [chart]="graphChart" [xaxis]="graphXaxis" [yaxis]="graphYaxis">
-    </apx-chart>
+    <p-organizationChart [value]="data" collapsible="true">
+      <ng-template let-node pTemplate="socialmedia">
+        <div class="socialmedia">
+          <div class="font-bold">
+            {{ node.data.name }}
+          </div>
+        </div>
+      </ng-template>
+      <ng-template let-node pTemplate="person">
+        <div (click)="openPersonDialog(node.data)">
+          <img
+            style="
+              border-radius: 100%;
+              width: 64px;
+              height: 64px;
+              object-fit: cover;
+            "
+            [src]="node.data.img"
+            alt=""
+          />
+          <div class="person">
+            {{ node.label }}
+          </div>
+        </div>
+      </ng-template>
+    </p-organizationChart>
   </div>
 
   <div class="chart-container">
     <h3>Score Serasa</h3>
-    <apx-chart [series]="serasaSeries" [chart]="serasaChart" [plotOptions]="serasaPlotOptions">
-    </apx-chart>
+    <div class="chart">
+      <apx-chart
+        [series]="serasaChartOptions.series"
+        [chart]="serasaChartOptions.chart"
+        [plotOptions]="serasaChartOptions.plotOptions"
+        [labels]="serasaChartOptions.labels"
+        [fill]="serasaChartOptions.fill"
+      ></apx-chart>
+    </div>
+  </div>
+  <div class="chart-container">
+    <h3>Novas informações</h3>
+    <p-timeline [value]="events">
+      <ng-template pTemplate="content" let-event>
+        <small class="p-text-secondary">{{ event.date }}</small>
+      </ng-template>
+      <ng-template pTemplate="opposite" let-event>
+        {{ event.status }}
+      </ng-template>
+    </p-timeline>
   </div>
 </div>
