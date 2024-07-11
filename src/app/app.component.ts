@@ -55,6 +55,6 @@ export class AppComponent {
   }
 
   onTabChange() {
-    this.tabService.tabChange.next(1);
+    this.tabService.tabChange.next(true);
   }
 }

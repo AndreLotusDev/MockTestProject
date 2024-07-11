@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { TabChangerService } from '../tab-change/tab-changer.service';
+import { SkeletonModule } from 'primeng/skeleton';
 
 @Component({
   selector: 'app-web',
   standalone: true,
-  imports: [CardModule, ButtonModule],
+  imports: [CardModule, ButtonModule, SkeletonModule],
   templateUrl: './web.component.html',
   styleUrl: './web.component.css',
 })
@@ -33,4 +35,18 @@ export class WebComponent {
         'Um jovem de 23 anos foi preso ontem, em uma operação da Polícia Federal, acusado de realizar acessos ilegais na dark web. Segundo os investigadores, ele estaria envolvido em atividades criminosas, incluindo a venda de dados pessoais e financeiros roubados, além de participação em fóruns de hackers. A operação, que durou meses, culminou na apreensão de computadores, celulares e outros dispositivos eletrônicos na residência do suspeito. O jovem pode enfrentar várias acusações, que incluem crimes cibernéticos e formação de quadrilha. As autoridades ressaltam a importância de ações rigorosas para combater o crime na internet.',
     },
   ];
+
+  public isLoading = true;
+  readonly tabChangeService = inject(TabChangerService);
+
+  constructor() {}
+
+  ngOnInit() {
+    this.tabChangeService.tabChange.subscribe(() => {
+      this.isLoading = true;
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 1500);
+    });
+  }
 }

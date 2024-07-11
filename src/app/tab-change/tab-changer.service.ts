@@ -5,5 +5,5 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class TabChangerService {
-  public tabChange = new Subject<number>();
+  public tabChange = new Subject<boolean>();
 }

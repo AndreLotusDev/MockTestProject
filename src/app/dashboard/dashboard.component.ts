@@ -16,6 +16,9 @@ import { ButtonModule } from 'primeng/button';
 import { SkeletonModule } from 'primeng/skeleton';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ConnectionInfoComponent } from '../connection-info/connection-info.component';
+import { TabChangerService } from '../tab-change/tab-changer.service';
+import { CommonModule } from '@angular/common';
+import { take } from 'rxjs';
 
 export type SerasaChartOptions = {
   series: ApexNonAxisChartSeries;
@@ -33,6 +36,7 @@ export type SerasaChartOptions = {
     ButtonModule,
     TimelineModule,
     SkeletonModule,
+    CommonModule,
   ],
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -133,6 +137,8 @@ export class DashboardComponent implements OnInit {
   ];
 
   readonly _materialDialogService = inject(MatDialog);
+  readonly tabChangedService = inject(TabChangerService);
+  public isLoading = true;
 
   constructor() {
     this.serasaChartOptions = {
@@ -187,7 +193,12 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('sadkaksd');
+    this.tabChangedService.tabChange.subscribe(() => {
+      this.isLoading = true;
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 1500);
+    });
   }
 
   serasaScoreToPercentage(score: number): number {

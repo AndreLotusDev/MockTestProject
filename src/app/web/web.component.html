@@ -1,8 +1,13 @@
 <div class="flex flex-col justify-center items-center py-4">
-  <h1>Nóticias sobre André Soares Gomes</h1>
+  <h1>Nóticias sobre andré gomes</h1>
+  @if (!isLoading) {
   <div class="flex gap-4">
     @for (news of newsArr; track news.id) {
-    <p-card [header]="news.title" subheader="G1" [style]="{ width: '360px', height: '550px' }">
+    <p-card
+      [header]="news.title"
+      subheader="G1"
+      [style]="{ width: '360px', height: '550px' }"
+    >
       <ng-template pTemplate="header">
         <img alt="Card" height="250" [src]="news.img" />
       </ng-template>
@@ -10,4 +15,62 @@
     </p-card>
     }
   </div>
+  } @else {
+  <div class="flex gap-4">
+    <div
+      class="w-1/3 flex flex-col gap-4 border border-solid border-gray-300 p-8"
+      style="width: 360px"
+    >
+      <p-skeleton width="290px" height="250px"></p-skeleton>
+      <div class="flex flex-col gap-1">
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+      </div>
+      <div class="mt-2 flex flex-col gap-1">
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+      </div>
+    </div>
+    <div
+      class="w-1/3 flex flex-col gap-4 border border-solid border-gray-300 p-8"
+      style="width: 360px"
+    >
+      <p-skeleton width="290px" height="250px"></p-skeleton>
+      <div class="flex flex-col gap-1">
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+      </div>
+      <div class="mt-2 flex flex-col gap-1">
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+      </div>
+    </div>
+    <div
+      class="w-1/3 flex flex-col gap-4 border border-solid border-gray-300 p-8"
+      style="width: 360px"
+    >
+      <p-skeleton width="290px" height="250px"></p-skeleton>
+      <div class="flex flex-col gap-1">
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+      </div>
+      <div class="mt-2 flex flex-col gap-1">
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+      </div>
+    </div>
+  </div>
+  }
 </div>

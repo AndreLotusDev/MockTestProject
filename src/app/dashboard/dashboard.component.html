@@ -1,5 +1,5 @@
 <div class="dashboard">
-  @defer {
+  @if (!isLoading) {
   <div class="chart-container">
     <h3>Grafo de Ligação</h3>
     <p-organizationChart [value]="data" collapsible="true">
@@ -52,7 +52,7 @@
       </ng-template>
     </p-timeline>
   </div>
-  } @loading (minimum 1.5s) {
+  } @else {
   <div class="flex flex-col items-center justify-center w-full pt-12 gap-4">
     <div class="border border-solid border-gray-200 p-4 w-64">
       <p-skeleton class="w-1/6 mb-4" height="2rem" />
