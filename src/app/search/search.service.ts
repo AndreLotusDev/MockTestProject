@@ -1,6 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
-export class SearchService {}
+export class SearchService {
+  searchState = signal('aaaa');
+
+  public search(search: string) {
+    this.searchState.set(search);
+  }
+}

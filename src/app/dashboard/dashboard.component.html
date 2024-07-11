@@ -1,4 +1,5 @@
 <div class="dashboard">
+  @defer {
   <div class="chart-container">
     <h3>Grafo de Ligação</h3>
     <p-organizationChart [value]="data" collapsible="true">
@@ -28,7 +29,6 @@
       </ng-template>
     </p-organizationChart>
   </div>
-
   <div class="chart-container">
     <h3>Score Serasa</h3>
     <div class="chart">
@@ -52,4 +52,31 @@
       </ng-template>
     </p-timeline>
   </div>
+  } @loading (minimum 1.5s) {
+  <div class="flex flex-col items-center justify-center w-full pt-12 gap-4">
+    <div class="border border-solid border-gray-200 p-4 w-64">
+      <p-skeleton class="w-1/6 mb-4" height="2rem" />
+    </div>
+    <div class="flex gap-4">
+      <div
+        class="flex flex-col items-center justify-center gap-2 border border-solid border-gray-200 p-4 w-64"
+      >
+        <p-skeleton shape="circle" size="5rem" />
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center gap-2 border border-solid border-gray-200 p-4 w-64"
+      >
+        <p-skeleton shape="circle" size="5rem" />
+        <p-skeleton class="w-full" height="1rem"></p-skeleton>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col items-center justify-center w-full pt-12 gap-4">
+    <div class="flex flex-col items-center justify-center gap-4">
+      <p-skeleton shape="circle" size="20rem" />
+      <p-skeleton class="w-full" height="1rem"></p-skeleton>
+    </div>
+  </div>
+  }
 </div>

@@ -13,6 +13,7 @@ import { TreeNode } from 'primeng/api';
 import { OrganizationChartModule } from 'primeng/organizationchart';
 import { TimelineModule } from 'primeng/timeline';
 import { ButtonModule } from 'primeng/button';
+import { SkeletonModule } from 'primeng/skeleton';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ConnectionInfoComponent } from '../connection-info/connection-info.component';
 
@@ -31,6 +32,7 @@ export type SerasaChartOptions = {
     OrganizationChartModule,
     ButtonModule,
     TimelineModule,
+    SkeletonModule,
   ],
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -184,7 +186,9 @@ export class DashboardComponent implements OnInit {
     };
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('sadkaksd');
+  }
 
   serasaScoreToPercentage(score: number): number {
     return (score * 100) / this.MAX_SERASA_VALUE;
