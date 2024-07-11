@@ -14,6 +14,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { ButtonModule } from 'primeng/button';
 import { TabChangerService } from './tab-change/tab-changer.service';
+import { EntidadeDeClasseComponent } from './entidade-de-classe/entidade-de-classe.component';
+import { SerasaComponent } from './serasa/serasa.component';
 
 @Component({
   selector: 'app-root',
@@ -31,6 +33,8 @@ import { TabChangerService } from './tab-change/tab-changer.service';
     WebComponent,
     ReactiveFormsModule,
     ButtonModule,
+    EntidadeDeClasseComponent,
+    SerasaComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -42,7 +46,7 @@ export class AppComponent {
 
   title = 'monitora-amazonas';
 
-  constructor() {}
+  constructor() { }
 
   search() {
     if (this.formControl.value) {

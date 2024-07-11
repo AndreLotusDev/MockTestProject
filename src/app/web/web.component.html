@@ -1,12 +1,8 @@
 <div class="flex flex-col justify-center items-center py-4">
-  <h1>Nóticias sobre andré gomes</h1>
+  <h1>Nóticias sobre André Soares Gomes</h1>
   <div class="flex gap-4">
     @for (news of newsArr; track news.id) {
-    <p-card
-      [header]="news.title"
-      subheader="G1"
-      [style]="{ width: '360px', height: '550px' }"
-    >
+    <p-card [header]="news.title" subheader="G1" [style]="{ width: '360px', height: '550px' }">
       <ng-template pTemplate="header">
         <img alt="Card" height="250" [src]="news.img" />
       </ng-template>

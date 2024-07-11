@@ -4,7 +4,7 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class SearchService {
-  searchState = signal('aaaa');
+  searchState = signal('');
 
   public search(search: string) {
     this.searchState.set(search);

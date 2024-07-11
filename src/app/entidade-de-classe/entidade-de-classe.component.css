@@ -1,0 +1,14 @@
+mat-card {
+    margin: 20px;
+    padding: 20px;
+}
+
+mat-card-header {
+    background-color: #003399;
+    color: white;
+    padding: 10px;
+}
+
+h2 {
+    color: #003399;
+}
