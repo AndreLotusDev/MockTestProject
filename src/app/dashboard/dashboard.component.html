@@ -1,0 +1,14 @@
+<div class="dashboard">
+
+  <div class="chart-container">
+    <h3>Grafo de Ligação</h3>
+    <apx-chart [series]="graphSeries" [chart]="graphChart" [xaxis]="graphXaxis" [yaxis]="graphYaxis">
+    </apx-chart>
+  </div>
+
+  <div class="chart-container">
+    <h3>Score Serasa</h3>
+    <apx-chart [series]="serasaSeries" [chart]="serasaChart" [plotOptions]="serasaPlotOptions">
+    </apx-chart>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+.diario-oficial {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.diario-oficial h2 {
+    text-align: center;
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+.diario-oficial h3 {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #555;
+}
+
+.diario-oficial p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.diario-oficial strong {
+    display: block;
+    margin-top: 10px;
+}
+
+.diario-oficial em {
+    display: block;
+    margin-top: 20px;
+    text-align: right;
+}
